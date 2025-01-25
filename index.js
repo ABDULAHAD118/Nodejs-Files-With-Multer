@@ -5,6 +5,10 @@ const path = require('path')
 const multer = require('multer')
 const fs = require('fs');
 
+const connection = require('./config/connection');
+
+connection(process.env.MONGODB_URI);
+
 const PORT = process.env.PORT;
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
